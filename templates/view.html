@@ -1,6 +1,8 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Image</title>
     <style>
         body, html {
@@ -16,17 +18,23 @@
         img {
             max-width: 90%;
             max-height: 90%;
+            margin-bottom: 10px;
         }
         .links {
             margin-top: 10px;
+            text-align: center;
+        }
+        .links a {
+            margin-right: 20px;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
     <img src="{{ url }}" alt="{{ filename }}">
     <div class="links">
-        <p><a href="{{ url }}">Download</a></p>
-        <p><a href="/">Back to list</a></p>
+        <p><a href="{{ url_for('download_file', filename=filename) }}">Download</a></p>
+        <p><a href="{{ url_for('index') }}">Back to Gallery</a></p>
     </div>
 </body>
 </html>
